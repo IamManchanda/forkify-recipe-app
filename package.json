@@ -1,0 +1,34 @@
+{
+  "name": "forkify-recipe-app",
+  "version": "1.0.0",
+  "scripts": {
+    "serve:dev": "webpack-dev-server --mode development --open",
+    "serve:prod": "webpack-dev-server --mode production --open",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "build:serve:dev": "yarn-or-npm run build:dev && yarn-or-npm run serve:dev",
+    "build:serve:prod": "yarn-or-npm run build:prod && yarn-or-npm run serve:prod",
+    "deploy": "yarn-or-npm run build:prod",
+    "start": "yarn-or-npm run serve:dev"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4",
+    "yarn-or-npm": "^2.0.4"
+  },
+  "main": "index.js",
+  "author": "Harry Manchanda",
+  "license": "MIT"
+}
