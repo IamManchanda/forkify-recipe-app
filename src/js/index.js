@@ -9,7 +9,6 @@ import { renderItem, deleteItem } from './views/listView';
 import { toggleLikeButton, toggleLikeMenu, renderLike, deleteLike } from './views/likesView';
 
 const state = {};
-window.state = state;
 
 /**
  * Search Controller
@@ -109,9 +108,6 @@ shoppingList.addEventListener('click', (event) => {
  * Likes Controller
  */
 
-state.likes = new Likes();
-toggleLikeMenu(state.likes.getNumberLikes());
-
 const likesController = () => {
   if (!state.likes) {
     state.likes = new Likes();
@@ -131,6 +127,15 @@ const likesController = () => {
   }
   toggleLikeMenu(state.likes.getNumberLikes());
 };
+
+window.addEventListener('load', () => {
+  state.likes = new Likes();
+  state.likes.readStorage();
+  toggleLikeMenu(state.likes.getNumberLikes());
+  state.likes.likes.forEach((like) => {
+    return renderLike(like);
+  });
+});
 
 recipeContainer.addEventListener('click', (event) => {
   if (event.target.matches('.btn-decrease, .btn-decrease *')) {

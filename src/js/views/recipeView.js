@@ -7,6 +7,7 @@ export const clearRecipe = () => {
 
 const formatCount = (count) => {
   if (count) {
+    // const newCount = Math.random(count * 10000) / 10000;
     const [integer, decimal] = count.toString().split('.').map(element => parseInt(element, 10));
     if (!decimal) { 
       return count; 
