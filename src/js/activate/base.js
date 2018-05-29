@@ -8,6 +8,10 @@ export const {
   resultsContainer,
   resultsList,
   resultsPages,
+  recipeContainer,
+  shoppingList,
+  likesField,
+  likesList,
 } = getElementsByIds();
 
 export const renderLoadingEffect = (parentElement) => {

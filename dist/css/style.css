@@ -421,10 +421,8 @@ body {
 }
 
 .recipe__fig {
-  height: 30rem;
+  height: 20rem;
   position: relative;
-  transform: scale(1.04) translateY(-1px);
-  transform-origin: top;
 }
 
 .recipe__fig::before {

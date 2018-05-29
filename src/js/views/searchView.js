@@ -13,7 +13,16 @@ export const clearResults = () => {
   resultsPages.innerHTML = '';
 };
 
-const limitRecipe = (title, limit = 30) => {
+export const highlightSelected = (id) => {
+  const resultsArray = Array.from(document.querySelectorAll('.results__link'));
+  resultsArray.forEach((element) => {
+    element.classList.remove('results__link--active');
+  });
+
+  document.querySelector(`.results__link[href*="#${id}"]`).classList.add('results__link--active');
+};
+
+export const limitRecipeTitle = (title, limit = 30) => {
   const newTitle = [];
   if (title.length > limit) {
     title.split(' ').reduce((accumulator, currentValue) => {
@@ -35,7 +44,7 @@ const renderRecipe = (recipe) => {
             <img src="${recipe.image_url}" alt="${recipe.title}">
         </figure>
         <div class="results__data">
-            <h4 class="results__name">${limitRecipe(recipe.title)}</h4>
+            <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
             <p class="results__author">${recipe.publisher}</p>
         </div>
     </a>
